@@ -1,4 +1,5 @@
 #!/bin/bash
+trap 'echo -e "\nInterrupted. Goodbye!"; exit 0' SIGINT
 # calc.sh — Shell Calculator
 # Usage: ./calc.sh <number_of_calculations>
 
@@ -39,7 +40,6 @@ Calc() {
         *)   echo "Unknown operation: $op"; return 1 ;;
     esac
 }
-
 # ── Main program ───────────────────────────────────
 
 # Check command line argument
@@ -52,9 +52,17 @@ count=$1
 
 for (( i=1; i<=count; i++ )); do
     echo "--- Calculation $i of $count ---"
-    read -p "Give 1st argument: " num1
-    read -p "Give 2nd argument: " num2
-    read -p "Give operation (+, -, *, /): " op
+    read -p "Enter calculation (e.g. 2 + 3): " input
+
+    if [[ ! $input =~ ^[[:space:]]*(-?[0-9]+)[[:space:]]+([+*/-])[[:space:]]+(-?[0-9]+)[[:space:]]*$ ]]; then
+        echo "Invalid format! Use: number operation number"
+        ((i--))
+        continue
+    fi
+
+    num1="${BASH_REMATCH[1]}"
+    op="${BASH_REMATCH[2]}"
+    num2="${BASH_REMATCH[3]}"
 
     result=$(Calc $num1 $num2 "$op")
 
