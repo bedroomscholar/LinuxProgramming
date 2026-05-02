@@ -1,0 +1,11 @@
+ls: cannot access '/nonexistent': No such file or directory
+/tmp:
+snap-private-tmp
+systemd-private-b901b1c370674c4fa1c61e0207304b12-fwupd.service-HwxIan
+systemd-private-b901b1c370674c4fa1c61e0207304b12-ModemManager.service-QUyrj2
+systemd-private-b901b1c370674c4fa1c61e0207304b12-polkit.service-PWSKSG
+systemd-private-b901b1c370674c4fa1c61e0207304b12-systemd-logind.service-Zu36Qs
+systemd-private-b901b1c370674c4fa1c61e0207304b12-systemd-resolved.service-I4fI2g
+systemd-private-b901b1c370674c4fa1c61e0207304b12-systemd-timesyncd.service-osGMor
+systemd-private-b901b1c370674c4fa1c61e0207304b12-upower.service-GB0Hzy
+appended line

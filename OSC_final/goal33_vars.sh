@@ -1,0 +1,18 @@
+echo "=== Script & Argument Variables ==="
+echo "\$0  (script name):    $0"
+echo "\$#  (argument count): $#"
+echo "\$@  (all arguments):  $@"
+echo "\$1  (first argument): $1"
+
+echo ""
+echo "=== Process Variables ==="
+echo "\$\$ (current PID):    $$"
+echo "\$? (last exit code):  $?"
+
+echo ""
+echo "=== Environment Variables ==="
+echo "\$HOME:  $HOME"
+echo "\$USER:  $USER"
+echo "\$PWD:   $PWD"
+echo "\$SHELL: $SHELL"
+echo "\$PATH (first 60 chars): ${PATH:0:60}..."
